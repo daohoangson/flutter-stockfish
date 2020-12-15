@@ -17,6 +17,7 @@
     if (call == NULL) {
       // avoid stripping
       stockfish_init();
+      stockfish_trace_eval();
     }
 
     result(FlutterMethodNotImplemented);

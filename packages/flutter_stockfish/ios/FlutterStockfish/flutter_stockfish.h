@@ -1,4 +1,11 @@
 #ifdef __cplusplus
-extern "C" __attribute__((visibility("default"))) __attribute__((used))
+extern "C" {
 #endif
+
 void stockfish_init(void);
+
+char * stockfish_trace_eval();
+
+#ifdef __cplusplus
+}
+#endif
