@@ -1,7 +1,8 @@
-
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+
+export 'src/stockfish.dart';
 
 class FlutterStockfish {
   static const MethodChannel _channel =

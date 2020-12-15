@@ -1,7 +1,12 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 file(GLOB_RECURSE cppPaths "../ios/Stockfish/src/*.cpp")
-add_library(stockfish SHARED ${cppPaths})
+add_library(
+  stockfish
+  SHARED
+  ../ios/FlutterStockfish/flutter_stockfish.cpp
+  ${cppPaths}
+)
 
 file(GLOB nnuePaths "../ios/Stockfish/src/*.nnue")
 foreach(nnuePath ${nnuePaths})

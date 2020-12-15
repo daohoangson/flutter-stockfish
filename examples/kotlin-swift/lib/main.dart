@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  final stockfish = Stockfish.instance;
 
   @override
   void initState() {
@@ -50,7 +51,11 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: AnimatedBuilder(
+            animation: stockfish.state,
+            builder: (_, __) =>
+                Text('${stockfish.state.value} on $_platformVersion\n'),
+          ),
         ),
       ),
     );

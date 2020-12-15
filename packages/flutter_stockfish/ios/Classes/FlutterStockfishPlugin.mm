@@ -1,4 +1,5 @@
 #import "FlutterStockfishPlugin.h"
+#import "flutter_stockfish.h"
 
 @implementation FlutterStockfishPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -13,6 +14,11 @@
   if ([@"getPlatformVersion" isEqualToString:call.method]) {
     result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
   } else {
+    if (call == NULL) {
+      // avoid stripping
+      stockfish_init();
+    }
+
     result(FlutterMethodNotImplemented);
   }
 }
