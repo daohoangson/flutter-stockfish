@@ -1,3 +1,6 @@
+#include <iostream>
+#include <sstream>
+
 #include "../Stockfish/src/bitboard.h"
 #include "../Stockfish/src/endgame.h"
 #include "../Stockfish/src/position.h"
@@ -40,4 +43,16 @@ char * stockfish_trace_eval() {
 	Eval::NNUE::verify();
 
 	return strdup(Eval::trace(p).c_str());
+}
+
+char * stockfish_uci(char *command) {
+	int argc = 2;
+	char *argv[2] = {"", command};
+
+	std::stringstream buffer;
+	std::streambuf* backup = std::cout.rdbuf(buffer.rdbuf());
+	UCI::loop(argc, argv);
+	std::cout.rdbuf(backup);
+
+	return strdup(buffer.str().c_str());
 }

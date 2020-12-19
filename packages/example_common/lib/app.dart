@@ -63,6 +63,16 @@ class _MyAppState extends State<MyApp> {
                 child: Text('traceEval'),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () async {
+                  final result = await stockfish.uci('d');
+                  print('uci=$result');
+                },
+                child: Text('uci'),
+              ),
+            ),
           ],
         ),
       ),

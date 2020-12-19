@@ -18,6 +18,7 @@
       // avoid stripping
       stockfish_init();
       stockfish_trace_eval();
+      stockfish_uci(NULL);
     }
 
     result(FlutterMethodNotImplemented);
