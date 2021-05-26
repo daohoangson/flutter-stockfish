@@ -1,7 +1,1 @@
-# Flutter Stockfish
-
-## Requirements
-
-### iOS
-
-- IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+This PoC is unmaintained. See https://github.com/ArjanAswal/Stockfish for further development.
